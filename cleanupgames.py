@@ -53,16 +53,5 @@ for year in range(0, 2):
         except:
             print("Game #"+str(game)+" failed.")
 
-# stats = []
-# filepath = "/Users/zcahoone/PycharmProjects/CBBModel2/Games/2013-14 Games/game11447/AwayBasic.csv"
-# df = pandas.read_csv(filepath)
-# print(df)
-# totalsIndex = int(df[df == "School Totals"].stack().index.tolist()[0][0])
-# for stat in basicStatHeader:
-#     stats.append(df[stat][totalsIndex])
-#
-# filepath = "/Users/zcahoone/P"
-#
-# print(basicStatHeader)
-# print(stats)
+
 

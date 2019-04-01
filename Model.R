@@ -1,0 +1,8 @@
+CBBData<-read.csv("cleanedupgames.csv")
+Experiment<-read.csv("ExperimentalProjection.csv")
+model <- lm(Point.Diff~Home.FG.+Home.2P.+Home.3P.+Home.FT+Home.FT.+Home.TRB+Home.TOV+Home.PF+Home.TS.+Home.eFG.+Home.3PAr+Home.TRB.+Home.STL.+Home.BLK.+Home.TOV.+Home.ORtg+Home.DRtg+Away.FG.+Away.2P.+Away.3P.+Away.FT+Away.FT.+Away.TRB+Away.TOV+Away.PF+Away.TS.+Away.eFG.+Away.3PAr+Away.TRB.+Away.STL.+Away.BLK.+Away.TOV.+Away.ORtg+Away.DRtg,data=CBBData)
+summary(model)
+
+Experiment[,"ModelPrediction"]<-rep(NA,times=1)
+Experiment[,"ModelPrediction"]<-110.197477744+39.958407730*Experiment[,"Home.FG."]-6.924359372*Experiment[,"Home.2P."]+1.357944717*Experiment[,"Home.3P."]+0.094048031*Experiment[,"Home.FT"]+1.731358859*Experiment[,"Home.FT."]+0.214890065*Experiment[,"Home.TRB"]+0.017006711*Experiment[,"Home.TOV"]+0.016947938*Experiment[,"Home.PF"]-33.832822924*Experiment[,"Home.TS."]-6.565778424*Experiment[,"Home.eFG."]+6.807511746*Experiment[,"Home.3PAr"]-0.191335441*Experiment[,"Home.ORB."]-1.091333419*Experiment[,"Home.DRB."]-0.001131857*Experiment[,"Home.STL."]-0.000849520*Experiment[,"Home.BLK."]+0.696900058*Experiment[,"Home.ORtg"]-0.581323619*Experiment[,"Home.DRtg"]-17.024425138*Experiment[,"Away.FG."]+2.801990591*Experiment[,"Away.2P."]-1.246147741*Experiment[,"Away.3P."]-0.066948867*Experiment[,"Away.FT"]-0.277151241*Experiment[,"Away.FT."]-0.173227310*Experiment[,"Away.TRB"]+0.256102450*Experiment[,"Away.TOV"]-0.042516982*Experiment[,"Away.PF"]+6.228891463*Experiment[,"Away.TS."]--0.523711747*Experiment[,"Away.eFG."]-3.870558531*Experiment["Away.3PAr"]-1.035833715*Experiment[,"Away.ORB."]-0.072820947*Experiment[,"Away.DRB."]+0.010039467*Experiment[,"Away.STL."]-0.007490804*Experiment[,"Away.BLK."]
+

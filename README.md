@@ -7,6 +7,8 @@ However, while building and testing my own model, I did scrape large amounts of 
 
 Here are the coefficients from a linear regression on the game data in cleanedupgames.csv with Point.Diff as the dependent variable:
 
+|Variables     | ...         | ...          | ...          | ...          | ...           | ...         |
+|--------------|-------------|--------------|--------------|--------------|---------------|-------------|
 |(Intercept)   |   Home.FG.  |    Home.2P.  |    Home.3P.  |     Home.FT  |    Home.FT.   |   Home.TRB  |
 |110.197477744 | 39.958407730|  -6.924359372|   1.357944717|   0.094048031|   1.731358859 |  0.214890065| 
 |     Home.TOV |      Home.PF|      Home.TS.|     Home.eFG.|     Home.3PAr|     Home.ORB. |    Home.DRB.| 

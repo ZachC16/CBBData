@@ -4,7 +4,7 @@ from pandas import *
 import os
 from time import sleep
 
-gameNum = 2108
+gameNum = 0
 fileNames = ["AwayBasic.csv","AwayAdvanced.csv","HomeBasic.csv","HomeAdvanced.csv"]
 
 for year in range (2011,2020):
@@ -27,9 +27,6 @@ for year in range (2011,2020):
             soup = BeautifulSoup(site.content, 'html.parser')
             linkTds = soup.find_all('td', class_='gamelink')
             links = []
-            if (month == 1) or (month == 2 and day in [1,2,3,4,5,6,7,8,9,10,11,12,13,14]) and year == 2011:
-                print("Skipping, already got these games.")
-                break
             for link in range (len(linkTds)):
                 aHref = linkTds[link].find('a')
                 try:
@@ -43,7 +40,7 @@ for year in range (2011,2020):
                 gameNum += 1
                 print("Starting game #"+str(gameNum))
                 gamefile = "game" + str(gameNum)
-                os.mkdir("/Users/zcahoone/PycharmProjects/CBBModel2/Games/game"+str(gameNum))
+                os.mkdir("/filepath-to-game-storage-folder/" + gamefile)
                 try:
                     theGame = requests.get(links[game])
                 except:
@@ -62,8 +59,8 @@ for year in range (2011,2020):
                 for table in range(0,5):
                     df = dfs[table]
                     if table != 0:
-                        open("/Users/zcahoone/PycharmProjects/CBBModel2/Games/"+str(gamefile)+"/"+str(fileNames[table-1]), "w+").close()
-                        df[0].to_csv("/Users/zcahoone/PycharmProjects/CBBModel2/Games/"+str(gamefile)+"/"+str(fileNames[table-1]), mode="w+")
+                        open(/filepath-to-game-storage-folder/"+str(gamefile)+"/"+str(fileNames[table-1]), "w+").close()
+                        df[0].to_csv("/filepath-to-game-storage-folder/"+str(gamefile)+"/"+str(fileNames[table-1]), mode="w+")
                     else:
-                        open("/Users/zcahoone/PycharmProjects/CBBModel2/Games/"+str(gamefile)+"/"+"FourFactors.csv", "w+").close()
-                        df[0].to_csv("/Users/zcahoone/PycharmProjects/CBBModel2/Games/"+str(gamefile)+"/"+"FourFactors.csv", mode="w+")
+                        open("/filepath-to-game-storage-folder/"+str(gamefile)+"/"+"FourFactors.csv", "w+").close()
+                        df[0].to_csv(/filepath-to-game-storage-folder/"+str(gamefile)+"/"+"FourFactors.csv", mode="w+")
